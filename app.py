@@ -3,7 +3,7 @@ from langchain.chains import create_history_aware_retriever,create_retrieval_cha
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_chroma import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import ChatPromptTemplate,MessagesPlaceholder
 from langchain_groq import ChatGroq
 from langchain.agents import initialize_agent,AgentType
@@ -34,7 +34,7 @@ if(choice=='PDF Chat'):
         embeddings=HuggingFaceEmbeddings(model_name='all-MiniLM-L6-v2')
         splitter=RecursiveCharacterTextSplitter(chunk_size=768,chunk_overlap=150)
         splits=splitter.split_documents(documents)
-        vectorstore=Chroma.from_documents(documents=splits,embedding=embeddings)
+        vectorstore=Chroma.from_documents(documents=splits,embedding=embeddings,persist_derectory=None)
         retriever=vectorstore.as_retriever()
         contextualize_q_system_prompt=(
         "Given a chat history and the latest user question"
@@ -129,6 +129,7 @@ elif(choice=='Wikipedia Search'):
 
 
             
+
 
 
 

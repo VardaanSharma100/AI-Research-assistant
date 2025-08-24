@@ -34,7 +34,7 @@ if(choice=='PDF Chat'):
         embeddings=HuggingFaceEmbeddings(model_name='all-MiniLM-L6-v2')
         splitter=RecursiveCharacterTextSplitter(chunk_size=768,chunk_overlap=150)
         splits=splitter.split_documents(documents)
-        vectorstore=Chroma.from_documents(documents=splits,embedding=embeddings,persist_derectory=None)
+        vectorstore=Chroma.from_documents(documents=splits,embedding=embeddings,persist_directory="")
         retriever=vectorstore.as_retriever()
         contextualize_q_system_prompt=(
         "Given a chat history and the latest user question"
@@ -129,6 +129,7 @@ elif(choice=='Wikipedia Search'):
 
 
             
+
 
 
 

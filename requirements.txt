@@ -2,10 +2,9 @@ streamlit
 langchain
 langchain-community
 langchain-core
-langchain-chroma
 langchain-groq
-langchain-huggingface
-chromadb
+langchain-chroma
+faiss-cpu
 pypdf
-sentence-transformers
-huggingface-hub
+wikipedia
+arxiv

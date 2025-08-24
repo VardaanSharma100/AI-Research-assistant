@@ -50,8 +50,7 @@ if(choice=='PDF Chat'):
                 ("human",'{input}')
             ]
         )
-        llm=ChatGroq(model='llama-3.1-8b-instant
-',api_key=groq_api_key)
+        llm=ChatGroq(model='llama-3.1-8b-instant',api_key=groq_api_key)
         history_aware_retriever=create_history_aware_retriever(llm,retriever,contextualize_q_prompt)
         system_prompt = (
             "You are an  Research assistant for question-answering tasks. "
@@ -88,8 +87,7 @@ elif(choice=='Arxiv Search'):
     tools=[arxiv]
     if 'store' not in st.session_state:
         st.session_state.store={}
-    llm=ChatGroq(model='llama-3.1-8b-instant
-',api_key=groq_api_key)
+    llm=ChatGroq(model='llama-3.1-8b-instant',api_key=groq_api_key)
     def get_session_history(session_id:str)->BaseChatMessageHistory:
             if session_id not in st.session_state.store:
                 st.session_state.store[session_id]=ChatMessageHistory()
@@ -111,8 +109,7 @@ elif(choice=='Wikipedia Search'):
     tools=[wiki]
     if 'store' not in st.session_state:
         st.session_state.store={}
-    llm=ChatGroq(model='llama-3.1-8b-instant
-',api_key=groq_api_key)
+    llm=ChatGroq(model='llama-3.1-8b-instant',api_key=groq_api_key)
     def get_session_history(session_id:str)->BaseChatMessageHistory:
             if session_id not in st.session_state.store:
                 st.session_state.store[session_id]=ChatMessageHistory()
@@ -132,6 +129,7 @@ elif(choice=='Wikipedia Search'):
 
 
             
+
 
 
 

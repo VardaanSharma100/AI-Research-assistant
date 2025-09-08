@@ -9,4 +9,7 @@ pypdf
 wikipedia
 arxiv
 huggingface-hub
+sentence-transformers
+transformers
+
 

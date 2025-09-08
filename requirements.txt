@@ -8,3 +8,5 @@ faiss-cpu
 pypdf
 wikipedia
 arxiv
+huggingface-hub
+

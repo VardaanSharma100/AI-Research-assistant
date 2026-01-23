@@ -126,17 +126,3 @@ elif(choice=='Wikipedia Search'):
             config={'configurable':{'session_id':session_id}}
         )
         st.write("AI :",response['output'])
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
